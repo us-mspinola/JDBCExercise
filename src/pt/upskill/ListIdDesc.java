@@ -6,7 +6,9 @@ public class ListIdDesc<K, V>{
 
 
     public HashMap<K, V> getKvMap() {
-        return kvMap;
+
+        HashMap<K,V> newKVMap= kvMap;
+        return newKVMap;
     }
 
     private HashMap<K,V> kvMap;

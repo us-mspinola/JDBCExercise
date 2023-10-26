@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBCExercise.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/FileRead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" afterDir="false" />
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +68,20 @@
       <option name="presentableId" value="Default" />
       <updated>1698244059938</updated>
     </task>
+    <task id="LOCAL-00001" summary="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos.">
+      <option name="closed" value="true" />
+      <created>1698281256383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698281256383</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
+    <option name="LAST_COMMIT_MESSAGE" value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -130,7 +133,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>95</line>
+          <line>93</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -140,7 +143,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>96</line>
+          <line>94</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -157,11 +160,6 @@
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
           <line>84</line>
           <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
