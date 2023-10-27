@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="createDBTables">
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698416354205</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)">
+      <option name="closed" value="true" />
+      <created>1698435677221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698435677221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,65 +150,20 @@
     <MESSAGE value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
     <MESSAGE value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
     <MESSAGE value="createDBTables" />
-    <option name="LAST_COMMIT_MESSAGE" value="createDBTables" />
+    <MESSAGE value="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/IdDesc.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="35" />
+          <line>112</line>
+          <properties class="pt.upskill.MyDBUtils" method="lookup">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

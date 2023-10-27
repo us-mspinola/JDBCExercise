@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.StringTokenizer;
 
 
 public class Main {
@@ -53,9 +53,9 @@ public class Main {
 
         Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
 
-            // doMainMenu(connection);
+        doMainMenu(connection);
 
-           doTest(connection);
+         //  doTest(connection);
 
         connection.close();
 
@@ -112,13 +112,16 @@ public class Main {
    }
 
 
+
+
+
     private static void populateIdDescTableFromFile(Connection connection, String tableName, String pathName, String fileName )
     {
         String path= pathName + fileName;
 
         ListIdDesc <Integer, String> listIdDescs= new ListIdDesc();
 
-        IdDesc.loadIdDescFromFile (listIdDescs,path);
+        MyUtils.loadIdDescFromFile (listIdDescs,path);
 
         HashMap<Integer,String> list = listIdDescs.getKvMap();
 

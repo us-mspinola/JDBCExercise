@@ -137,4 +137,12 @@ public class MyDBUtils {
         return default_value;
     }
 
+
+   /* get_list_id_desc(Connection conn, String sqlCmd)
+    {
+
+
+    }
+
+    */
 }

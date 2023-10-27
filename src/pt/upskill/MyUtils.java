@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class MyUtils {
 
@@ -28,22 +29,27 @@ public class MyUtils {
     }
 
 
-    public static void readFile(String csvFile){
 
 
-        try ( Scanner scanner = new Scanner(new File(csvFile))) {
-            scanner.useDelimiter(";");
-            while (scanner.hasNext()) {
-                String data = scanner.next();
-                System.out.println(data);
+    public static void loadIdDescFromFile(ListIdDesc list, String fileName)
+    {
+
+        FileRead fileRead = new FileRead();
+        fileRead.init(fileName);
+        String line;
+        IdDesc idDesc;
+        StringTokenizer st;
+
+        do{
+            line=fileRead.readLine();
+            if (line != null){
+                st = new StringTokenizer(line, ";");
+                idDesc = new IdDesc(st.nextToken().trim(), st.nextToken().trim());
+                list.add(idDesc);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        finally {
+        } while (line!=null);
 
-        }
+        fileRead.close();
     }
-
 
 }
