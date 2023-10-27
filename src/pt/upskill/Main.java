@@ -15,6 +15,8 @@ public class Main {
     private static final String DB_USER = "big";
     private static final String DB_PWD = "brother";
 
+    private static final String PATH_NAME="dados//";
+
 
     enum OpMainMenu {
         OP_ALUNOS('1'),OP_CURSOS('2'), OP_CORES('3'),
@@ -64,21 +66,22 @@ public class Main {
 
     private static void doTest(Connection connection ) throws SQLException
     {
-            MyDBUtils.get_select_command("now");
+        MyDBUtils.get_select_command("now");
         System.out.println(MyDBUtils.exist(connection,"cor", "cor='Azul'"));
 
     }
 
 
-   private static void doMainMenu(Connection connection ) throws SQLException
+   private static void doMainMenu(Connection connection )
    {
 
        OpMainMenu opMenu;
+
        while ( (opMenu = MyUtils.getMenuOption(mainMenu))!=OpMainMenu.OP_SAIR)
            if (opMenu!= null) {
                switch (opMenu) {
                    case OP_CRIAR_BD:
-                       criarTabelas(connection);
+                       createDBTables(connection);
                        break;
                    case OP_ALUNOS:
                        System.out.println(opMenu);
@@ -90,10 +93,10 @@ public class Main {
                        System.out.println(opMenu);
                        break;
                    case OP_POPULAR_CORES:
-                       populateIdDescTableFromFile(connection, "cor", "cores.txt");
+                       populateIdDescTableFromFile(connection, "cor", PATH_NAME, "cores.txt");
                        break;
                    case OP_POPULAR_CURSOS:
-                       populateIdDescTableFromFile(connection, "curso", "cursos.txt");
+                       populateIdDescTableFromFile(connection, "curso", PATH_NAME,"cursos.txt");
 
                        break;
                    case OP_SAIR:
@@ -104,9 +107,9 @@ public class Main {
    }
 
 
-    private static void populateIdDescTableFromFile(Connection connection, String tableName, String fileName ) throws SQLException
+    private static void populateIdDescTableFromFile(Connection connection, String tableName, String pathName, String fileName )
     {
-        String path= "dados//"+fileName;
+        String path= pathName + fileName;
 
         ListIdDesc <Integer, String> listIdDescs= new ListIdDesc();
 
@@ -114,69 +117,52 @@ public class Main {
 
         HashMap<Integer,String> list = listIdDescs.getKvMap();
 
-
         // Iterate over the HashMap
         for (Map.Entry<Integer, String> entry : list.entrySet()) {
             String sql = "insert into " + tableName + " values ("+ entry.getKey() + ",'" + entry.getValue() + "');";
-          System.out.println("sql " + sql);
-            MyDBUtils.exec_sql(connection,sql);
-        }
-    }
-
-
-    private static void popularTabela(String fileName)
-    {
-        String path= "dados//"+fileName;
-
-        ArrayList<IdDesc> listIdDescs = new ArrayList<>();
-
-        IdDesc.loadIdDesc (listIdDescs,path);
-
-        for (IdDesc idDesc : listIdDescs)
-            System.out.println(idDesc);
-
-
-    }
-
-    private static void criarTabelas(Connection connection) throws SQLException
-    {
-
-        MyDBUtils.exec_sql(connection,"create table curso(id_curso int primary key, " +
-                "curso varchar(50) not null unique)");
-
-        MyDBUtils.exec_sql(connection,"create table cor(id_cor int primary key, " +
-                "cor varchar(50) not null unique)");
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("create table aluno(nr_aluno int primary key auto_increment,");
-        sb.append("nome varchar(50) not null,");
-        sb.append("data_criacao date,");
-        sb.append("id_cor int not null,");
-        sb.append("id_curso int not null,");
-        sb.append("foreign key(id_cor) references cor(id_cor),");
-        sb.append("foreign key(id_curso) references curso(id_curso))");
-        MyDBUtils.exec_sql(connection,sb.toString());
-
-    }
-    private static void testDB() {
-        String connString = "jdbc:mysql://localhost:3306/demo_jdbc";
-        String username = "big";
-        String password = "brother";
-
-        try (Connection conn = DriverManager.getConnection(connString, username, password);
-             Statement statement = conn.createStatement();) {
-
-            String cmdSQL = "SELECT * FROM pessoa ORDER BY nome";
-            ResultSet rs = statement.executeQuery(cmdSQL);
-
-            while (rs.next()) {
-                System.out.printf("%-10s \t %2d \t %c\n", rs.getString("nome"),
-                        rs.getInt("idade"),
-                        rs.getString("cod_dep").charAt(0));
+            // System.out.println("sql " + sql);
+            try {
+                MyDBUtils.exec_sql(connection,sql);
+            } catch (SQLException e) {
+                System.out.println("exec_sql:" + sql + " Error: " + e.getMessage());
             }
-        } catch (SQLException e) {
-            System.out.println(e.toString());
         }
     }
+
+
+    /**
+     *
+     * @param connection
+     * @todo: take proper care of exception
+     */
+    private static void createDBTables(Connection connection)
+    {
+
+        String sql = "";
+        try {
+
+            sql= "create table curso(id_curso int primary key, curso varchar(50) not null unique)";
+            MyDBUtils.exec_sql(connection, sql);
+
+
+            sql= "create table cor(id_cor int primary key, cor varchar(50) not null unique)";
+            MyDBUtils.exec_sql(connection, sql);
+
+            StringBuilder sb = new StringBuilder();
+            sb.append("create table aluno(nr_aluno int primary key auto_increment,");
+            sb.append("nome varchar(50) not null,");
+            sb.append("data_criacao date,");
+            sb.append("id_cor int not null,");
+            sb.append("id_curso int not null,");
+            sb.append("foreign key(id_cor) references cor(id_cor),");
+            sb.append("foreign key(id_curso) references curso(id_curso))");
+            MyDBUtils.exec_sql(connection, sb.toString());
+        }
+        catch (SQLException e) {
+
+            System.out.println("exec_sql:" + sql + " Error: " + e.getMessage());
+        }
+    }
+
 
 }
