@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+
 public class Main {
 
 
@@ -52,9 +53,9 @@ public class Main {
 
         Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
 
-            doMainMenu(connection);
+            // doMainMenu(connection);
 
-           // doTest(connection);
+           doTest(connection);
 
         connection.close();
 
@@ -68,6 +69,10 @@ public class Main {
     {
         MyDBUtils.get_select_command("now");
         System.out.println(MyDBUtils.exist(connection,"cor", "cor='Azul'"));
+
+
+        int codCor= 1;
+        System.out.println(MyDBUtils.lookup(connection, "cor", "cor", "id_cor=" + codCor, "","","", "NO COLOR FOUND"));
 
     }
 

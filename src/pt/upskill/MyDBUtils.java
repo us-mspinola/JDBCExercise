@@ -86,7 +86,7 @@ public class MyDBUtils {
      *
      */
 
-    public static boolean  exist(Connection conn, String table, String where) throws SQLException
+    public static boolean exist(Connection conn, String table, String where) throws SQLException
     {
 
         Statement statement = conn.createStatement();
@@ -95,6 +95,46 @@ public class MyDBUtils {
 
         return (rs.next() && rs.getInt(1) !=0) ? true: false;
 
+    }
+
+    /**
+     * Crie o método público Object lookup que devolve o valor do campo field existente na tabela
+     * ou o valor de default, caso não exista o registo.
+     * @param conn
+     * @param field
+     * @param table
+     * @param where_cond
+     * @param default_value
+     * @return
+     *
+     * Exemplo int cod_cor = 194;
+     * String color_description = lookup(conn, "colorName", "TColor", "id_cor=" + cod_cor, "NO COLOR FOUND")
+     */
+    public static Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value) throws SQLException
+    {
+        String cmdSQL= "";
+
+        if (!group_by.isBlank())
+        {
+            cmdSQL = get_select_command(field, table, where_cond, group_by, having, order_by);
+        }
+        else {
+            if (!order_by.isBlank())
+            {
+                cmdSQL = get_select_command(field, table, where_cond, order_by);
+            }
+            else{
+                cmdSQL = get_select_command(field, table, where_cond);
+            }
+        }
+
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(cmdSQL);
+
+        if (rs.next())
+            return rs.getObject(1);
+
+        return default_value;
     }
 
 }

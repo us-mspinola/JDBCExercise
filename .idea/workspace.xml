@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="private static void popularIdDesc(Connection connection, String tableName, String fileName )">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="createDBTables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.Main">
@@ -114,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698364858630</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="createDBTables">
+      <option name="closed" value="true" />
+      <created>1698416354205</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698416354205</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +139,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
     <MESSAGE value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
-    <option name="LAST_COMMIT_MESSAGE" value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
+    <MESSAGE value="createDBTables" />
+    <option name="LAST_COMMIT_MESSAGE" value="createDBTables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -188,18 +197,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="30" />
+          <line>127</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
