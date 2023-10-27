@@ -37,6 +37,19 @@ public class MyDBUtils {
 
     }
 
+    /**
+     *
+     * @param conn
+     * @param sqlCmd
+     * @return
+     * @throws SQLException
+     */
+    private static ResultSet exec_query(Connection conn,String sqlCmd) throws SQLException
+    {
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery(sqlCmd);
+        return rs;
+    }
 
     /**
      * Crie os métodos públicos que devolvem a string contendo o comando SELECT corretamente construído a partir dos valores
@@ -89,9 +102,8 @@ public class MyDBUtils {
     public static boolean exist(Connection conn, String table, String where) throws SQLException
     {
 
-        Statement statement = conn.createStatement();
         String cmdSQL= get_select_command("count(*)", table, where);
-        ResultSet rs = statement.executeQuery(cmdSQL);
+        ResultSet rs = exec_query(conn,cmdSQL);
 
         return (rs.next() && rs.getInt(1) !=0) ? true: false;
 
@@ -110,26 +122,35 @@ public class MyDBUtils {
      * Exemplo int cod_cor = 194;
      * String color_description = lookup(conn, "colorName", "TColor", "id_cor=" + cod_cor, "NO COLOR FOUND")
      */
-    public static Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value) throws SQLException
+    public static Object lookup(Connection conn, String field, String table, String where_cond,String default_value) throws SQLException
     {
-        String cmdSQL= "";
+        String cmdSQL = get_select_command(field, table, where_cond);
+        ResultSet rs = exec_query(conn, cmdSQL);
 
-        if (!group_by.isBlank())
-        {
-            cmdSQL = get_select_command(field, table, where_cond, group_by, having, order_by);
-        }
-        else {
-            if (!order_by.isBlank())
-            {
-                cmdSQL = get_select_command(field, table, where_cond, order_by);
-            }
-            else{
-                cmdSQL = get_select_command(field, table, where_cond);
-            }
-        }
+        if (rs.next())
+            return rs.getObject(1);
 
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery(cmdSQL);
+        return default_value;
+    }
+
+    /**
+     *
+     * @param conn
+     * @param field
+     * @param table
+     * @param where_cond
+     * @param group_by
+     * @param having
+     * @param default_value
+     * @return
+     * @throws SQLException
+     */
+
+    public static Object lookup(Connection conn, String field, String table,
+                                String where_cond, String group_by, String having, String default_value) throws SQLException
+    {
+        String cmdSQL = get_select_command(field, table, where_cond,group_by,having, field);
+        ResultSet rs = exec_query(conn, cmdSQL);
 
         if (rs.next())
             return rs.getObject(1);

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)">
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="   MyUtils.loadIdDescFromFile (listIdDescs,path);">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698435677221</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="   MyUtils.loadIdDescFromFile (listIdDescs,path);">
+      <option name="closed" value="true" />
+      <created>1698437803817</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698437803817</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,21 +157,7 @@
     <MESSAGE value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
     <MESSAGE value="createDBTables" />
     <MESSAGE value="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)" />
-    <option name="LAST_COMMIT_MESSAGE" value="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
-          <line>112</line>
-          <properties class="pt.upskill.MyDBUtils" method="lookup">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="   MyUtils.loadIdDescFromFile (listIdDescs,path);" />
+    <option name="LAST_COMMIT_MESSAGE" value="   MyUtils.loadIdDescFromFile (listIdDescs,path);" />
   </component>
 </project>

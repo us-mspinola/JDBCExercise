@@ -53,9 +53,9 @@ public class Main {
 
         Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
 
-        doMainMenu(connection);
+        // doMainMenu(connection);
 
-         //  doTest(connection);
+          doTest(connection);
 
         connection.close();
 
@@ -71,9 +71,8 @@ public class Main {
         System.out.println(MyDBUtils.exist(connection,"cor", "cor='Azul'"));
 
 
-        int codCor= 1;
-        System.out.println(MyDBUtils.lookup(connection, "cor", "cor", "id_cor=" + codCor, "","","", "NO COLOR FOUND"));
-
+        int codCor= 10;
+        System.out.println(MyDBUtils.lookup(connection, "cor", "cor", "id_cor=" + codCor, "NO COLOR FOUND"));
     }
 
 
@@ -128,7 +127,6 @@ public class Main {
         // Iterate over the HashMap
         for (Map.Entry<Integer, String> entry : list.entrySet()) {
             String sql = "insert into " + tableName + " values ("+ entry.getKey() + ",'" + entry.getValue() + "');";
-            // System.out.println("sql " + sql);
             try {
                 MyDBUtils.exec_sql(connection,sql);
             } catch (SQLException e) {
