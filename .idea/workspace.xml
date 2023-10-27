@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos.">
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="private static void popularIdDesc(Connection connection, String tableName, String fileName )">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
     </list>
@@ -99,12 +100,32 @@
       <option name="project" value="LOCAL" />
       <updated>1698281815481</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="private static void popularIdDesc(Connection connection, String tableName, String fileName )">
+      <option name="closed" value="true" />
+      <created>1698364858630</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698364858630</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
-    <option name="LAST_COMMIT_MESSAGE" value="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos." />
+    <MESSAGE value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
+    <option name="LAST_COMMIT_MESSAGE" value="private static void popularIdDesc(Connection connection, String tableName, String fileName )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -151,17 +172,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>92</line>
+          <line>112</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>94</line>
+          <line>114</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>102</line>
+          <line>122</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -176,8 +197,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>90</line>
+          <line>110</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

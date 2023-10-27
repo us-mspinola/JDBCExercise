@@ -11,8 +11,8 @@ public class IdDesc <K, V> {
 
     private void buildCurso(String line){
         StringTokenizer st = new StringTokenizer(line, ";");
-        key = (K)st.nextToken();
-        value =(V)st.nextToken();
+        key = (K)st.nextToken().trim();
+        value =(V)st.nextToken().trim();
     }
 
 

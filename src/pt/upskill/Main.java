@@ -47,35 +47,14 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-        Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
-        OpMainMenu opMenu;
-        while ( (opMenu = MyUtils.getMenuOption(mainMenu))!=OpMainMenu.OP_SAIR)
-            if (opMenu!= null) {
-                switch (opMenu) {
-                    case OP_CRIAR_BD:
-                        criarTabelas(connection);
-                        break;
-                    case OP_ALUNOS:
-                        System.out.println(opMenu);
-                        break;
-                    case OP_CURSOS:
-                        System.out.println(opMenu);
-                        break;
-                    case OP_CORES:
-                        System.out.println(opMenu);
-                        break;
-                    case OP_POPULAR_CORES:
-                        popularIdDesc(connection, "cor", "cores.txt");
-                        break;
-                    case OP_POPULAR_CURSOS:
-                        popularIdDesc(connection, "curso", "cursos.txt");
 
-                        break;
-                    case OP_SAIR:
-                        System.out.println(opMenu);
-                }
-            }
-            connection.close();
+        Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
+
+            doMainMenu(connection);
+
+           // doTest(connection);
+
+        connection.close();
 
         } catch (SQLException e) {
             System.out.println(e.toString());
@@ -83,8 +62,49 @@ public class Main {
 
     }
 
+    private static void doTest(Connection connection ) throws SQLException
+    {
+            MyDBUtils.get_select_command("now");
+        System.out.println(MyDBUtils.exist(connection,"cor", "cor='Azul'"));
 
-    private static void popularIdDesc(Connection connection, String tableName, String fileName )
+    }
+
+
+   private static void doMainMenu(Connection connection ) throws SQLException
+   {
+
+       OpMainMenu opMenu;
+       while ( (opMenu = MyUtils.getMenuOption(mainMenu))!=OpMainMenu.OP_SAIR)
+           if (opMenu!= null) {
+               switch (opMenu) {
+                   case OP_CRIAR_BD:
+                       criarTabelas(connection);
+                       break;
+                   case OP_ALUNOS:
+                       System.out.println(opMenu);
+                       break;
+                   case OP_CURSOS:
+                       System.out.println(opMenu);
+                       break;
+                   case OP_CORES:
+                       System.out.println(opMenu);
+                       break;
+                   case OP_POPULAR_CORES:
+                       populateIdDescTableFromFile(connection, "cor", "cores.txt");
+                       break;
+                   case OP_POPULAR_CURSOS:
+                       populateIdDescTableFromFile(connection, "curso", "cursos.txt");
+
+                       break;
+                   case OP_SAIR:
+                       System.out.println(opMenu);
+               }
+           }
+
+   }
+
+
+    private static void populateIdDescTableFromFile(Connection connection, String tableName, String fileName ) throws SQLException
     {
         String path= "dados//"+fileName;
 
@@ -97,8 +117,8 @@ public class Main {
 
         // Iterate over the HashMap
         for (Map.Entry<Integer, String> entry : list.entrySet()) {
-            String sql = "insert into " + tableName + " values ("+ entry.getKey() + ",'" + (entry.getValue()).trim() + "');";
-            System.out.println("sql " + sql);
+            String sql = "insert into " + tableName + " values ("+ entry.getKey() + ",'" + entry.getValue() + "');";
+          System.out.println("sql " + sql);
             MyDBUtils.exec_sql(connection,sql);
         }
     }
@@ -118,7 +138,8 @@ public class Main {
 
     }
 
-    private static void criarTabelas(Connection connection){
+    private static void criarTabelas(Connection connection) throws SQLException
+    {
 
         MyDBUtils.exec_sql(connection,"create table curso(id_curso int primary key, " +
                 "curso varchar(50) not null unique)");
