@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;us-mspinola&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2ae571ce-752f-4118-b727-6c44442c9ed6" />
+        <option name="url" value="https://github.com/us-mspinola/JDBCExercise.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -76,7 +91,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698281256383</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="9.&#10;Crie a classe IdDesc&lt;K, V&gt; capaz de armazenar dois elementos (key e value) de qualquer tipo de dados. O objetivo é ter disponível uma classe capaz de armazenar facilmente os elementos de tabelas periféricas do tipo Pais(cod_pais, pais), Cor(id_cor, cor), etc.&#10;10.&#10;Crie a classe ListIdDesc&lt;K, V&gt; capaz de suportar uma lista de elementos da classe IdDesc&lt;K, V&gt;.&#10;11.&#10;Implemente o método add que permite adicionar um item do tipo IdDesc ou dois elementos (key e value) dos tipos genéricos associados.&#10;12.&#10;Implemente o getter da classe ListIdDesc&lt;K, V&gt; que, por segurança, devolva um clone da lista interna de IdDesc elementos.">
+      <option name="closed" value="true" />
+      <created>1698281815481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698281815481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -128,22 +151,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>86</line>
+          <line>92</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>88</line>
+          <line>94</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>94</line>
+          <line>102</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -158,7 +176,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/pt/upskill/Main.java</url>
-          <line>84</line>
+          <line>90</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>

@@ -46,6 +46,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        try {
         Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
         OpMainMenu opMenu;
         while ( (opMenu = MyUtils.getMenuOption(mainMenu))!=OpMainMenu.OP_SAIR)
@@ -64,21 +65,26 @@ public class Main {
                         System.out.println(opMenu);
                         break;
                     case OP_POPULAR_CORES:
-                        popularIdDesc("cores.txt");
+                        popularIdDesc(connection, "cor", "cores.txt");
                         break;
                     case OP_POPULAR_CURSOS:
-                        popularIdDesc("cursos.txt");
+                        popularIdDesc(connection, "curso", "cursos.txt");
 
                         break;
                     case OP_SAIR:
                         System.out.println(opMenu);
                 }
             }
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
 
     }
 
 
-    private static void popularIdDesc(String fileName)
+    private static void popularIdDesc(Connection connection, String tableName, String fileName )
     {
         String path= "dados//"+fileName;
 
@@ -88,16 +94,13 @@ public class Main {
 
         HashMap<Integer,String> list = listIdDescs.getKvMap();
 
+
         // Iterate over the HashMap
         for (Map.Entry<Integer, String> entry : list.entrySet()) {
-
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            String sql = "insert into " + tableName + " values ("+ entry.getKey() + ",'" + (entry.getValue()).trim() + "');";
+            System.out.println("sql " + sql);
+            MyDBUtils.exec_sql(connection,sql);
         }
-
-
-
-
-
     }
 
 
