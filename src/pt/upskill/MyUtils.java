@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 
 public class MyUtils {
 
-    public static Main.OpMainMenu getMenuOption(String menu[])
+    public static Main.OpMainMenu getMenuOption(String[] menu)
     {
         for (int i=0; i<menu.length; i++)
             System.out.printf("\t%s\n",menu[i]);

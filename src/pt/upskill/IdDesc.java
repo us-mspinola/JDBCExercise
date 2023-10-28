@@ -5,8 +5,8 @@ import java.util.StringTokenizer;
 
 public class IdDesc <K, V> {
 
-    private K key;
-    private V value;
+    private final K key;
+    private final V value;
 
 
     public IdDesc(K key,V value){

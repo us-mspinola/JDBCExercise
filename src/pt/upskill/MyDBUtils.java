@@ -1,10 +1,11 @@
 package pt.upskill;
 
 import java.sql.*;
+import java.util.StringTokenizer;
 
 public class MyDBUtils {
 
-    public enum db_type {DB_MYSQL, DB_SQLSERVER, DB_SQLITE};
+    public enum db_type {DB_MYSQL, DB_SQLSERVER, DB_SQLITE}
 
     private static String get_connection_string (db_type type, String server, String port, String db, String user, String pwd){
         switch (type){
@@ -13,6 +14,17 @@ public class MyDBUtils {
         return null;
     }
 
+    /**
+     *
+     * @param type
+     * @param server
+     * @param port
+     * @param db
+     * @param user
+     * @param pwd
+     * @return
+     * @throws SQLException
+     */
     public static Connection get_connection(db_type type, String server, String port, String db, String user, String pwd) throws SQLException
 
     {
@@ -38,7 +50,7 @@ public class MyDBUtils {
     }
 
     /**
-     *
+     * @author Maria Spínola
      * @param conn
      * @param sqlCmd
      * @return
@@ -95,8 +107,13 @@ public class MyDBUtils {
     }
 
 
-    /** Crie o método público Boolean exist(conn, table, where) que verifica se existe algum registo nas condições enviadas à função.
+    /**
      *
+     * @param conn
+     * @param table
+     * @param where
+     * @return
+     * @throws SQLException
      */
 
     public static boolean exist(Connection conn, String table, String where) throws SQLException
@@ -105,7 +122,7 @@ public class MyDBUtils {
         String cmdSQL= get_select_command("count(*)", table, where);
         ResultSet rs = exec_query(conn,cmdSQL);
 
-        return (rs.next() && rs.getInt(1) !=0) ? true: false;
+        return rs.next() && rs.getInt(1) != 0;
 
     }
 
@@ -158,12 +175,26 @@ public class MyDBUtils {
         return default_value;
     }
 
-
-   /* get_list_id_desc(Connection conn, String sqlCmd)
+    /**
+     * @author:
+     * @param conn
+     * @param sqlCmd
+     * @return
+     * @throws SQLException
+     */
+    public static ListIdDesc<Integer, String> get_list_id_desc(Connection conn, String sqlCmd) throws SQLException
     {
+        ListIdDesc<Integer, String> list= new ListIdDesc();
+        IdDesc<Integer, String> idDesc;
 
+        ResultSet rs = exec_query(conn, sqlCmd);
+        while (rs.next()){
+            idDesc = new IdDesc(rs.getInt(1),rs.getString(2));
+            list.add(idDesc);
+        }
+        return list;
 
     }
 
-    */
+
 }

@@ -24,8 +24,8 @@ public class Main {
         OP_CRIAR_BD('7'), OP_POPULAR_CURSOS('8'), OP_POPULAR_CORES('9'),
         OP_SAIR('0');
 
-        private char menu_option;
-        private OpMainMenu(char value)
+        private final char menu_option;
+        OpMainMenu(char value)
         {
             menu_option=value;
         }
@@ -35,7 +35,7 @@ public class Main {
         }
     }
 
-    private static String mainMenu[] = {
+    private static final String[] mainMenu = {
             "1 - Gerir Alunos",
             "2 - Gerir Cursos",
             "3 - Gerir Cores // (não implementar, é semelhante aos Cursos)",
@@ -60,7 +60,7 @@ public class Main {
         connection.close();
 
         } catch (SQLException e) {
-            System.out.println(e.toString());
+            System.out.println(e);
         }
 
     }
@@ -73,9 +73,21 @@ public class Main {
 
         int codCor= 10;
         System.out.println(MyDBUtils.lookup(connection, "cor", "cor", "id_cor=" + codCor, "NO COLOR FOUND"));
+
+
+        ListIdDesc<Integer, String> list= MyDBUtils.get_list_id_desc(connection, "SELECT * FROM cor");
+
+        for (Map.Entry<Integer, String> entry : list.getKvMap().entrySet()) {
+
+            System.out.println("Key: " + entry.getKey() + " value: " + entry.getValue());
+        }
+
     }
 
-
+    /**
+     *
+     * @param connection
+     */
    private static void doMainMenu(Connection connection )
    {
 
@@ -111,9 +123,13 @@ public class Main {
    }
 
 
-
-
-
+    /**
+     *
+     * @param connection
+     * @param tableName
+     * @param pathName
+     * @param fileName
+     */
     private static void populateIdDescTableFromFile(Connection connection, String tableName, String pathName, String fileName )
     {
         String path= pathName + fileName;
@@ -154,15 +170,14 @@ public class Main {
             sql= "create table cor(id_cor int primary key, cor varchar(50) not null unique)";
             MyDBUtils.exec_sql(connection, sql);
 
-            StringBuilder sb = new StringBuilder();
-            sb.append("create table aluno(nr_aluno int primary key auto_increment,");
-            sb.append("nome varchar(50) not null,");
-            sb.append("data_criacao date,");
-            sb.append("id_cor int not null,");
-            sb.append("id_curso int not null,");
-            sb.append("foreign key(id_cor) references cor(id_cor),");
-            sb.append("foreign key(id_curso) references curso(id_curso))");
-            MyDBUtils.exec_sql(connection, sb.toString());
+            String sb = "create table aluno(nr_aluno int primary key auto_increment," +
+                    "nome varchar(50) not null," +
+                    "data_criacao date," +
+                    "id_cor int not null," +
+                    "id_curso int not null," +
+                    "foreign key(id_cor) references cor(id_cor)," +
+                    "foreign key(id_curso) references curso(id_curso))";
+            MyDBUtils.exec_sql(connection, sb);
         }
         catch (SQLException e) {
 

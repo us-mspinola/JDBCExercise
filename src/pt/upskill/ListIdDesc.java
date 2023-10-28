@@ -11,7 +11,7 @@ public class ListIdDesc<K, V>{
         return newKVMap;
     }
 
-    private HashMap<K,V> kvMap;
+    private final HashMap<K,V> kvMap;
 
 
     public ListIdDesc( )
