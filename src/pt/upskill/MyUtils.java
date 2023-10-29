@@ -44,7 +44,7 @@ public class MyUtils {
             line=fileRead.readLine();
             if (line != null){
                 st = new StringTokenizer(line, ";");
-                idDesc = new IdDesc(st.nextToken().trim(), st.nextToken().trim());
+                idDesc = new IdDesc( Integer.parseInt(st.nextToken().trim()), st.nextToken().trim());
                 list.add(idDesc);
             }
         } while (line!=null);

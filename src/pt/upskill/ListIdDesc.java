@@ -1,17 +1,18 @@
 package pt.upskill;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ListIdDesc<K, V>{
 
 
-    public HashMap<K, V> getKvMap() {
+    public Map<K, V> getKvMap() {
 
-        HashMap<K,V> newKVMap= kvMap;
+        Map<K,V> newKVMap= kvMap;
         return newKVMap;
     }
 
-    private final HashMap<K,V> kvMap;
+    private final Map<K,V> kvMap;
 
 
     public ListIdDesc( )

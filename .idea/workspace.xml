@@ -7,13 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="private static ResultSet exec_query(Connection conn,String sqlCmd) throws SQLException">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="826c9fb5-30cb-441a-880e-de9660ec3432" name="Changes" comment="public static ListIdDesc&lt;Integer, String&gt; get_list_id_desc(Connection conn, String sqlCmd) throws SQLException">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/IdDesc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/ListIdDesc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyDBUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/upskill/MyUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,20 +54,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/working/UpSkill/Laboratório Programação/projects/JDBCExercise/lib/mysql-connector-j-8.1.0.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/working/UpSkill/Laboratório Programação/projects/JDBCExercise/lib/mysql-connector-j-8.1.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pt.upskill.Main" />
@@ -157,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698445398711</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="public static ListIdDesc&lt;Integer, String&gt; get_list_id_desc(Connection conn, String sqlCmd) throws SQLException">
+      <option name="closed" value="true" />
+      <created>1698455188763</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698455188763</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,7 +182,8 @@
     <MESSAGE value="tatic Object lookup(Connection conn, String field, String table, String where_cond, String group_by, String having, String order_by, String default_value)" />
     <MESSAGE value="   MyUtils.loadIdDescFromFile (listIdDescs,path);" />
     <MESSAGE value="private static ResultSet exec_query(Connection conn,String sqlCmd) throws SQLException" />
-    <option name="LAST_COMMIT_MESSAGE" value="private static ResultSet exec_query(Connection conn,String sqlCmd) throws SQLException" />
+    <MESSAGE value="public static ListIdDesc&lt;Integer, String&gt; get_list_id_desc(Connection conn, String sqlCmd) throws SQLException" />
+    <option name="LAST_COMMIT_MESSAGE" value="public static ListIdDesc&lt;Integer, String&gt; get_list_id_desc(Connection conn, String sqlCmd) throws SQLException" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

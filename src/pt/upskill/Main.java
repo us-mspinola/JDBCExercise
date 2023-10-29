@@ -1,10 +1,7 @@
 package pt.upskill;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
 
 
 public class Main {
@@ -53,9 +50,9 @@ public class Main {
 
         Connection connection = MyDBUtils.get_connection(MyDBUtils.db_type.DB_MYSQL,DB_SERVER,DB_PORT,DB_NAME,DB_USER,DB_PWD);
 
-        // doMainMenu(connection);
+        doMainMenu(connection);
 
-          doTest(connection);
+         //  doTest(connection);
 
         connection.close();
 
@@ -77,9 +74,12 @@ public class Main {
 
         ListIdDesc<Integer, String> list= MyDBUtils.get_list_id_desc(connection, "SELECT * FROM cor");
 
-        for (Map.Entry<Integer, String> entry : list.getKvMap().entrySet()) {
 
-            System.out.println("Key: " + entry.getKey() + " value: " + entry.getValue());
+
+        Set<Map.Entry<Integer,String>> entries = list.getKvMap().entrySet();
+        for (Map.Entry e : entries) {
+            System.out.println("Key " + e.getKey()
+                    + " valor " + e.getValue());
         }
 
     }
@@ -138,7 +138,7 @@ public class Main {
 
         MyUtils.loadIdDescFromFile (listIdDescs,path);
 
-        HashMap<Integer,String> list = listIdDescs.getKvMap();
+        Map<Integer,String> list = listIdDescs.getKvMap();
 
         // Iterate over the HashMap
         for (Map.Entry<Integer, String> entry : list.entrySet()) {
